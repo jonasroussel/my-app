@@ -11,7 +11,10 @@
 		"packages/**"
 	],
 	"scripts": {
-		"dev": "pnpm --filter './apps/*' --stream --parallel run dev"
+		"dev": "pnpm --filter './apps/*' --stream --parallel run dev",
+
+		"build:backend": "pnpm --filter backend... install && pnpm --filter backend... --parallel run build",
+		"build:frontend": "pnpm --filter frontend... install && pnpm --filter frontend run build"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.18",

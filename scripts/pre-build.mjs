@@ -52,4 +52,4 @@ for (let app of apps) {
 	if (hasChanges(deps, changes)) appsToBuild.push(app)
 }
 
-process.stdout.write(`output=${appsToBuild.join(',')}`)
+process.stdout.write(`output=${JSON.stringify(appsToBuild)}`)
