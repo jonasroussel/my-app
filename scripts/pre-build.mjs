@@ -39,7 +39,8 @@ const hasChanges = (deps, changes) => {
 }
 
 const SHA1 = process.env.NX_HEAD ?? 'HEAD'
-const SHA2 = process.env.NX_BASE ?? 'HEAD~1'
+// const SHA2 = process.env.NX_BASE ?? 'HEAD~1'
+const SHA2 = '8f09d73ab83de2aadcd28a142f7d109a8e2d1590'
 
 const changes = (await execute(`git diff --name-only ${SHA1} ${SHA2}`)).trim().split('\n')
 const apps = JSON.parse(await execute('pnpm list --filter "./apps/*" --json --depth -1')).map((app) => app.name)
@@ -51,4 +52,4 @@ for (let app of apps) {
 	if (hasChanges(deps, changes)) appsToBuild.push(app)
 }
 
-process.stdout.write(`APPS_TO_BUILD=${appsToBuild.join(',')}`)
+process.stdout.write(`output=${appsToBuild.join(',')}`)
