@@ -25,6 +25,9 @@ jobs:
           node-version: 16
           cache: 'pnpm'
 
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Derive appropriate SHAs for base and head
         uses: nrwl/nx-set-shas@v3
 
