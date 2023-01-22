@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 	next()
 })
 
-let count = 10
+let count = 0
 
 app.get('/count', (req, res) => {
 	sleep(250).then(() => {
